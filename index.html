@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS | Get Woocommerce Products</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="js/bh-oauth-1.0a.js"></script>
+  <script src="js/bh-oauth-signature.js"></script>
+  <script src="js/custom.js"></script>
+
+
+</head>
+<body>
+	<div ng-app='myApp'>
+    <div ng-controller="AppController">
+    <label>Start Entering name of Product</label>
+    <p><input id="txtbilal" type="text" ng-model="test"></p> 
+      <div ng-repeat="(key, value) in steps">
+        
+			<ul id="customData">
+			  <li ng-cloak ng-repeat="val in value | filter:test">
+			    <a href="{{ val.permalink }}">{{ val.title }}</a>
+			  </li> 
+			</ul>
+       </div>
+</div>
+</body>
+</html>
